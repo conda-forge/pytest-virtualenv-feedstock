@@ -1,5 +1,5 @@
 {% set name = "pytest-virtualenv" %}
-{% set version = "1.3.0" %}
+{% set version = "1.4.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8d8a0b9b57f5efb7db6457c1f57347e35fe332979ecefe592d5324430ae3ed7f
+  sha256: 7d1ad9f90e28345df7d364eaf725d51cc8e9e0767bff5606779228af07782d98
 
 build:
   number: 0
