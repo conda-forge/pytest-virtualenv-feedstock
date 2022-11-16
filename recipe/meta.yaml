@@ -20,33 +20,34 @@ requirements:
     - pytest
     - pytest-fixture-config
     - pytest-shutil
-    - python
+    - python >=3
     - setuptools
     - setuptools-git
   run:
     - pytest
     - pytest-fixture-config
     - pytest-shutil
-    - python
+    - importlib-metadata
+    - python >=3
 
 test:
   imports:
     - pytest_virtualenv
   requires:
-    - mock
-    - pytest
-    - pytest-shutil
-    - pytest-fixture-config
+    - pip
+  commands:
+    - pip check
 
 about:
-  home: https://github.com/manahl/pytest-plugins
+  home: https://github.com/man-group/pytest-plugins
   license: MIT
   license_family: MIT
   license_file: 'LICENSE'
   summary: Virtualenv fixture for py.test
-  doc_url: https://github.com/manahl/pytest-plugins/tree/master/pytest-virtualenv#readme
-  dev_url: https://github.com/manahl/pytest-plugins
+  doc_url: https://github.com/man-group/pytest-plugins/tree/master/pytest-virtualenv#readme
+  dev_url: https://github.com/man-group/pytest-plugins
 
 extra:
   recipe-maintainers:
     - jcfr
+    - henryiii
