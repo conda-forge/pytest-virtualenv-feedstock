@@ -29,6 +29,7 @@ requirements:
     - pytest-shutil
     - importlib-metadata
     - python >=3
+    - virtualenv
 
 test:
   imports:
