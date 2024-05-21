@@ -10,7 +10,7 @@ source:
   sha256: 2270ee8822111ec25db48e9d9f2efec32e68483a015b14cd0d92aeccc6ff820f
 
 build:
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
   noarch: python
 
@@ -20,33 +20,35 @@ requirements:
     - pytest
     - pytest-fixture-config
     - pytest-shutil
-    - python
+    - python >=3
     - setuptools
     - setuptools-git
   run:
     - pytest
     - pytest-fixture-config
     - pytest-shutil
-    - python
+    - importlib-metadata
+    - python >=3
+    - virtualenv
 
 test:
   imports:
     - pytest_virtualenv
   requires:
-    - mock
-    - pytest
-    - pytest-shutil
-    - pytest-fixture-config
+    - pip
+  commands:
+    - pip check
 
 about:
-  home: https://github.com/manahl/pytest-plugins
+  home: https://github.com/man-group/pytest-plugins
   license: MIT
   license_family: MIT
   license_file: 'LICENSE'
   summary: Virtualenv fixture for py.test
-  doc_url: https://github.com/manahl/pytest-plugins/tree/master/pytest-virtualenv#readme
-  dev_url: https://github.com/manahl/pytest-plugins
+  doc_url: https://github.com/man-group/pytest-plugins/tree/master/pytest-virtualenv#readme
+  dev_url: https://github.com/man-group/pytest-plugins
 
 extra:
   recipe-maintainers:
     - jcfr
+    - henryiii
