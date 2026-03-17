@@ -1,5 +1,5 @@
 {% set name = "pytest-virtualenv" %}
-{% set version = "1.7.0" %}
+{% set version = "1.8.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2270ee8822111ec25db48e9d9f2efec32e68483a015b14cd0d92aeccc6ff820f
+  sha256: 54991039df31b23e82f59da2d08ab3ab809cf6eecf89905bdf2927a41f97e1c5
 
 build:
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
 requirements:
