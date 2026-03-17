@@ -6,12 +6,12 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 2270ee8822111ec25db48e9d9f2efec32e68483a015b14cd0d92aeccc6ff820f
 
 build:
-  number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
 requirements:
@@ -20,14 +20,14 @@ requirements:
     - pytest
     - pytest-fixture-config
     - pytest-shutil
-    - python
+    - python {{ python_min }}
     - setuptools
     - setuptools-git
   run:
     - pytest
     - pytest-fixture-config
     - pytest-shutil
-    - python
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -37,6 +37,7 @@ test:
     - pytest
     - pytest-shutil
     - pytest-fixture-config
+    - python {{ python_min }}
 
 about:
   home: https://github.com/manahl/pytest-plugins
